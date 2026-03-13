@@ -4,3 +4,4 @@
 <link href="{{ asset('admin_assets/css/nucleo-svg.css') }}" rel="stylesheet" />
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <link href="{{ asset('admin_assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5') }}" rel="stylesheet" />
+<link href="{{ asset('admin_assets/css/sidebar-custom.css') }}" rel="stylesheet" />

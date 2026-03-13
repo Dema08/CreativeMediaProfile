@@ -9,7 +9,7 @@
                 <p class="mb-0">Use the sidebar to navigate or click the button below to log out.</p>
                 <form action="{{ route('admin.logout') }}" method="POST" class="mt-4">
                     @csrf
-                    <button type="submit" class="inline-block px-6 py-3 bg-gradient-to-tl from-purple-700 to-pink-500 text-white font-semibold text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:outline-none transition duration-150">Logout</button>
+                    <button type="submit" class="btn-admin">Logout</button>
                 </form>
             </div>
         </div>

@@ -23,72 +23,66 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul class="navbar-nav m-auto">
 
-                                <li class="nav-item active">
+                                <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
                                     <a href="{{ url('/') }}">Beranda</a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="">Bidang Studi</a>
+                                @php
+                                    $bidangStudis = \App\Models\BidangStudi::all();
+                                    $layananJasas = \App\Models\LayananJasa::all();
+                                @endphp
+
+                                <li class="nav-item {{ request()->routeIs('bidangstudi.*') ? 'active' : '' }}">
+                                    <a href="{{ route('bidangstudi.index') }}">Bidang Studi</a>
 
                                     <ul class="sub-menu">
-                                        <li>
-                                            <a href="{{ url('/bidang-studi/administrasi-perkantoran') }}">
-                                                Administrasi Perkantoran
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{ url('/bidang-studi/komputer-akuntansi') }}">
-                                                Komputer Akuntansi
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{ url('/bidang-studi/digital-marketing') }}">
-                                                Digital Marketing
-                                            </a>
-                                        </li>
+                                        @forelse($bidangStudis as $item)
+                                            <li>
+                                                <a href="{{ route('bidangstudi.show', $item->slug) }}">
+                                                    {{ $item->nama }}
+                                                </a>
+                                            </li>
+                                        @empty
+                                            <li>
+                                                <span class="text-gray-500">Tidak ada bidang studi</span>
+                                            </li>
+                                        @endforelse
                                     </ul>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="">Layanan Jasa</a>
+                                <li class="nav-item {{ request()->routeIs('layanan.*') ? 'active' : '' }}">
+                                    <a href="{{ route('layanan.index') }}">Layanan Jasa</a>
 
                                     <ul class="sub-menu">
-                                        <li>
-                                            <a href="{{ url('/layanan-jasa/branding-design') }}">
-                                                Branding & Design
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{ url('/layanan-jasa/web-development') }}">
-                                                Web Development
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{ url('/layanan-jasa/mobile-app-development') }}">
-                                                Mobile App Development
-                                            </a>
-                                        </li>
+                                        @forelse($layananJasas as $item)
+                                            <li>
+                                                <a href="{{ route('layanan.show', $item->slug) }}">
+                                                    {{ $item->nama }}
+                                                </a>
+                                            </li>
+                                        @empty
+                                            <li>
+                                                <span class="text-gray-500">Tidak ada layanan</span>
+                                            </li>
+                                        @endforelse
                                     </ul>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="#karya">Karya Siswa</a>
-                                </li>
 
                                 <li class="nav-item">
-                                    <a href="#testimoni">Testimoni</a>
+                                    <a href="{{ url('/karya-siswa') }}">Karya Siswa</a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="#artikel">Artikel</a>
+                                <li class="nav-item {{ request()->routeIs('testimoni.*') ? 'active' : '' }}">
+                                    <a href="{{ route('testimoni.index') }}">Testimoni</a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="#kontak">Hubungi Kami</a>
+                                <li class="nav-item {{ request()->routeIs('artikel.*') ? 'active' : '' }}">
+                                    <a href="{{ route('artikel.index') }}">Artikel</a>
+                                </li>
+
+                                <li class="nav-item {{ request()->routeIs('contact') ? 'active' : '' }}">
+                                    <a href="{{ route('contact') }}">Hubungi Kami</a>
                                 </li>
 
                             </ul>
@@ -96,7 +90,11 @@
 
                         <!-- BUTTON -->
                        <div class="navbar-btn d-none d-lg-inline-block">
-                            <a class="main-btn" href="{{ url('/admin/login') }}">Login</a>
+                            @if(auth('admin')->check())
+                                <a class="main-btn" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                            @else
+                                <a class="main-btn" href="{{ url('/admin/login') }}">Login</a>
+                            @endif
                         </div>
 
                     </nav>

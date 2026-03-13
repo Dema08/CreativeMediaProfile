@@ -57,45 +57,35 @@
         <div class="header-hero-image d-flex align-items-center wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="1.1s">
     <div id="heroSlider" class="carousel slide w-100" data-ride="carousel">
 
-        <ol class="carousel-indicators">
-            <li data-target="#heroSlider" data-slide-to="0" class="active"></li>
-            <li data-target="#heroSlider" data-slide-to="1"></li>
-            <li data-target="#heroSlider" data-slide-to="2"></li>
-            <li data-target="#heroSlider" data-slide-to="3"></li>
-            <li data-target="#heroSlider" data-slide-to="4"></li>
-        </ol>
+        @if(isset($heros) && $heros->count())
+            <ol class="carousel-indicators">
+                @foreach($heros as $hero)
+                    <li data-target="#heroSlider" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                @endforeach
+            </ol>
 
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="image text-center">
-                    <img src="{{ asset('user_assets/images/hero-image.png') }}" class="img-fluid" alt="Hero Image 1">
+            <div class="carousel-inner">
+                @foreach($heros as $hero)
+                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                        <div class="image text-center">
+                            <img src="{{ asset('storage/'.$hero->gambar) }}" class="img-fluid" alt="{{ $hero->judul }}">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <ol class="carousel-indicators">
+                <li data-target="#heroSlider" data-slide-to="0" class="active"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="image text-center">
+                        <img src="{{ asset('user_assets/images/hero-image.png') }}" class="img-fluid" alt="Hero Image 1">
+                    </div>
                 </div>
             </div>
-
-            <div class="carousel-item">
-                <div class="image text-center">
-                    <img src="{{ asset('user_assets/images/hero-image.png') }}" class="img-fluid" alt="Hero Image 2">
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="image text-center">
-                    <img src="{{ asset('user_assets/images/hero-image.png') }}" class="img-fluid" alt="Hero Image 3">
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="image text-center">
-                    <img src="{{ asset('user_assets/images/hero-image.png') }}" class="img-fluid" alt="Hero Image 3">
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="image text-center">
-                    <img src="{{ asset('user_assets/images/hero-image.png') }}" class="img-fluid" alt="Hero Image 3">
-                </div>
-            </div>
-        </div>
+        @endif
 
         <a class="carousel-control-prev" href="#heroSlider" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -206,7 +196,7 @@
             <!-- IMAGE -->
             <div class="col-lg-6">
                 <div class="about-image-2 text-center mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <img src="{{ asset('user_assets/images/about-2.jpg') }}" alt="about">
+                    <img src="{{ asset('user_assets/images/about-2.png') }}" alt="about">
                 </div>
             </div>
 
@@ -338,37 +328,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h6 class="sub-title">Kami dipercayai oleh:</h6>
+                    </div>
                     <div class="brand-wrapper pt-70 clearfix">
-                        <div class="single-brand mt-50 text-md-left wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <img src="user_assets/images/brand-1.png" alt="brand">
-                        </div> <!-- single brand -->
-                        <div class="single-brand mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-                            <img src="user_assets/images/brand-2.png" alt="brand">
-                        </div> <!-- single brand -->
-                        <div class="single-brand mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                            <img src="user_assets/images/brand-3.png" alt="brand">
-                        </div> <!-- single brand -->
-                        <div class="single-brand mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                            <img src="user_assets/images/brand-4.png" alt="brand">
-                        </div> <!-- single brand -->
-                        <div class="single-brand mt-50 text-md-right wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                            <img src="user_assets/images/brand-5.png" alt="brand">
-                        </div> <!-- single brand -->
-                        <div class="single-brand mt-50 text-md-left wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
-                            <img src="user_assets/images/brand-5.png" alt="brand">
-                        </div> <!-- single brand -->
-                        <div class="single-brand mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                            <img src="user_assets/images/brand-4.png" alt="brand">
-                        </div> <!-- single brand -->
-                        <div class="single-brand mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">
-                            <img src="user_assets/images/brand-3.png" alt="brand">
-                        </div> <!-- single brand -->
-                        <div class="single-brand mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
-                            <img src="user_assets/images/brand-2.png" alt="brand">
-                        </div> <!-- single brand -->
-                        <div class="single-brand mt-50 text-md-right wow fadeIn" data-wow-duration="1s" data-wow-delay="1.1s">
-                            <img src="user_assets/images/brand-1.png" alt="brand">
-                        </div> <!-- single brand -->
+                        @if(isset($partners) && $partners->count())
+                            @foreach($partners as $partner)
+                                <div class="single-brand mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                                    <img src="{{ asset($partner->logo ? 'storage/'.$partner->logo : 'user_assets/images/brand-1.png') }}" alt="{{ $partner->nama_perusahaan }}">
+                                </div> <!-- single brand -->
+                            @endforeach
+                        @else
+                            <div class="single-brand mt-50 text-md-left wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                                <img src="user_assets/images/brand-1.png" alt="brand">
+                            </div> <!-- single brand -->
+                            <div class="single-brand mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+                                <img src="user_assets/images/brand-2.png" alt="brand">
+                            </div> <!-- single brand -->
+                            <div class="single-brand mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                                <img src="user_assets/images/brand-3.png" alt="brand">
+                            </div> <!-- single brand -->
+                        @endif
                     </div> <!-- brand wrapper -->
                 </div>
             </div> <!-- row -->
@@ -394,165 +374,102 @@
         </div>
 
         <div class="row justify-content-center">
+            @if(isset($teams) && $teams->count())
+                @foreach($teams as $team)
+                    <div class="col-lg-4 col-md-6 col-sm-9">
+                        <div class="single-team mt-30 wow fadeInUpBig">
+                            <div class="team-image">
+                                <img src="{{ asset($team->foto ? 'storage/'.$team->foto : 'user_assets/images/protfolio-2.jpg') }}" alt="{{ $team->nama }}">
+                                <a class="plus-link" href="#"><i class="lni-plus"></i></a>
+                            </div>
 
-            <!-- TEAM MEMBER -->
-            <div class="col-lg-4 col-md-6 col-sm-9">
-                <div class="single-team mt-30 wow fadeInUpBig">
-                    <div class="team-image">
-                        <img src="{{ asset('user_assets/images/protfolio-2.jpg') }}" alt="Team">
-                        <a class="plus-link" href="#"><i class="lni-plus"></i></a>
+                            <div class="team-content text-center">
+                                <h4 class="team-title">{{ $team->nama }}</h4>
+                                <span class="sub-title">{{ $team->jabatan }}</span>
+
+                                <p class="text mt-2">
+                                    {{ \Illuminate\Support\Str::limit($team->history, 120) }}
+                                </p>
+
+                                <ul class="social">
+                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="team-content text-center">
-                        <h4 class="team-title">Ayu Sarwinasih</h4>
-                        <span class="sub-title">Customer Service Officer</span>
-
-                        <p class="text mt-2">
-                            Berpengalaman dalam pelayanan customer dan
-                            menguasai Microsoft Office serta komunikasi pelanggan.
-                        </p>
-
-                        <ul class="social">
-                            <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                            <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                        </ul>
-                    </div>
+                @endforeach
+            @else
+                <div class="col-12 text-center">
+                    <p class="text-muted">Tim belum tersedia.</p>
                 </div>
-            </div>
-
-
-            <!-- TEAM MEMBER -->
-            <div class="col-lg-4 col-md-6 col-sm-9">
-                <div class="single-team mt-30 wow fadeInUpBig">
-                    <div class="team-image">
-                        <img src="{{ asset('user_assets/images/protfolio-2.jpg') }}" alt="Team">
-                        <a class="plus-link" href="#"><i class="lni-plus"></i></a>
-                    </div>
-
-                    <div class="team-content text-center">
-                        <h4 class="team-title">Dhea Choirunissa S. A.</h4>
-                        <span class="sub-title">Customer Service Officer</span>
-
-                        <p class="text mt-2">
-                            Berpengalaman di front desk service dan pelayanan
-                            profesional kepada calon customer.
-                        </p>
-
-                        <ul class="social">
-                            <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                            <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- TEAM MEMBER -->
-            <div class="col-lg-4 col-md-6 col-sm-9">
-                <div class="single-team mt-30 wow fadeInUpBig">
-                    <div class="team-image">
-                        <img src="{{ asset('user_assets/images/protfolio-2.jpg') }}" alt="Team">
-                        <a class="plus-link" href="#"><i class="lni-plus"></i></a>
-                    </div>
-
-                    <div class="team-content text-center">
-                        <h4 class="team-title">Tsatyana Ulfah</h4>
-                        <span class="sub-title">Manager HR & GA</span>
-
-                        <p class="text mt-2">
-                            Berpengalaman sebagai manager perusahaan
-                            dan memiliki background pendidikan serta HR management.
-                        </p>
-
-                        <ul class="social">
-                            <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                            <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- TEAM MEMBER -->
-            <div class="col-lg-4 col-md-6 col-sm-9">
-                <div class="single-team mt-30 wow fadeInUpBig">
-                    <div class="team-image">
-                        <img src="{{ asset('user_assets/images/protfolio-2.jpg') }}" alt="Team">
-                        <a class="plus-link" href="#"><i class="lni-plus"></i></a>
-                    </div>
-
-                    <div class="team-content text-center">
-                        <h4 class="team-title">Rida Annisa Ramadhani</h4>
-                        <span class="sub-title">Admin & Finance</span>
-
-                        <p class="text mt-2">
-                            Berpengalaman dalam bidang finance,
-                            perpajakan dan administrasi perusahaan.
-                        </p>
-
-                        <ul class="social">
-                            <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                            <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- TEAM MEMBER -->
-            <div class="col-lg-4 col-md-6 col-sm-9">
-                <div class="single-team mt-30 wow fadeInUpBig">
-                    <div class="team-image">
-                        <img src="{{ asset('user_assets/images/protfolio-2.jpg') }}" alt="Team">
-                        <a class="plus-link" href="#"><i class="lni-plus"></i></a>
-                    </div>
-
-                    <div class="team-content text-center">
-                        <h4 class="team-title">Safira Salsabila</h4>
-                        <span class="sub-title">Trainer IT & Multimedia</span>
-
-                        <p class="text mt-2">
-                            Menguasai software desain grafis dan interior
-                            seperti Photoshop, Illustrator, AutoCAD, SketchUp.
-                        </p>
-
-                        <ul class="social">
-                            <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                            <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- TEAM MEMBER -->
-            <div class="col-lg-4 col-md-6 col-sm-9">
-                <div class="single-team mt-30 wow fadeInUpBig">
-                    <div class="team-image">
-                        <img src="{{ asset('user_assets/images/protfolio-2.jpg') }}" alt="Team">
-                        <a class="plus-link" href="#"><i class="lni-plus"></i></a>
-                    </div>
-
-                    <div class="team-content text-center">
-                        <h4 class="team-title">M Nailul Abrori</h4>
-                        <span class="sub-title">Web & Android Programming</span>
-
-                        <p class="text mt-2">
-                            Berpengalaman sebagai programmer sejak 2015
-                            dalam pengembangan website dan aplikasi Android.
-                        </p>
-
-                        <ul class="social">
-                            <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                            <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
+            @endif
         </div>
     </div>
 </section>
 
 <!--====== TEAM PART ENDS ======-->
+
+<section class="testimonial-area pt-70 pb-120" id="testimoni">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center pb-20">
+                    <h6 class="sub-title">Berikan Testimoni</h6>
+                    <h4 class="title">Beri Penilaian & Tanggapan Anda</h4>
+                </div>
+
+                @if(session('success'))
+                    <div class="mt-4 p-4 bg-green-100 text-green-800 rounded">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                <div class="mt-6 bg-white p-5 rounded shadow-sm">
+                    <form action="{{ route('testimoni.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Nama</label>
+                            <input type="text" name="nama" class="w-full px-3 py-2 border border-gray-300 rounded" value="{{ old('nama') }}" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Jabatan</label>
+                            <input type="text" name="jabatan" class="w-full px-3 py-2 border border-gray-300 rounded" value="{{ old('jabatan') }}">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Pesan</label>
+                            <textarea name="pesan" class="w-full px-3 py-2 border border-gray-300 rounded" rows="3" required>{{ old('pesan') }}</textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Rating</label>
+                            <select name="rating" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                                @for($i=5; $i>=1; $i--)
+                                    <option value="{{ $i }}" {{ old('rating') == $i ? 'selected' : '' }}>{{ $i }} bintang</option>
+                                @endfor
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Foto (opsional)</label>
+                            <div class="custom-file-upload">
+                                <input type="file" name="foto" id="foto" class="file-input" accept="image/*" hidden>
+                                <label for="foto" class="file-label">
+                                    <i class="lni-upload"></i>
+                                    <span class="file-text">Pilih File</span>
+                                </label>
+                                <span class="file-name" id="file-name"></span>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <button type="submit" class="main-btn">Kirim Testimoni</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection

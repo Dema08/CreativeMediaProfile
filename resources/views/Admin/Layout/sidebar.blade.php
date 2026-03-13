@@ -1,91 +1,251 @@
-<aside class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent">
+<aside class="fixed inset-y-0 left-0 z-50 my-4 ml-4 w-64 rounded-2xl bg-gradient-to-b from-orange-500 via-orange-600 to-orange-700 shadow-soft-2xl overflow-y-auto">
 
-  <div class="h-19.5">
-    <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
-
-    <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="{{ route('admin.dashboard') }}">
-      <img src="{{ asset('admin_assets/img/logo.png') }}" class="inline h-full max-w-full max-h-8" />
-      <span class="ml-1 font-semibold">Admin Panel</span>
+  <!-- LOGO -->
+  <div class="px-6 py-6">
+    <a href="{{ route('admin.dashboard') }}" class="flex items-center text-white">
+      <img src="{{ asset('admin_assets/img/logo.png') }}" class="h-10 w-10 rounded-full mr-3 shadow-md">
+      <div>
+        <div class="font-bold text-lg">Creative Media</div>
+        <div class="text-xs opacity-80">Admin Panel</div>
+      </div>
     </a>
   </div>
 
-  <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
+  <hr class="border-white/20 mx-4">
 
-  <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full">
-    <ul class="flex flex-col pl-0 mb-0">
+  <!-- MENU -->
+  <ul class="mt-4 space-y-2 px-3">
 
-      {{-- DASHBOARD --}}
-      <li class="mt-0.5 w-full">
-            <a
-              class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors {{ request()->is('admin/dashboard*') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' : '' }}"
-              href="{{ route('admin.dashboard') }}">
-              <div
-                class="bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                <i class="fas fa-home text-white text-sm"></i>
-              </div>
-              <span
-                class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft"
-                >Dashboard</span
-              >
+    <!-- DASHBOARD -->
+    <li>
+      <a href="{{ route('admin.dashboard') }}"
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+
+        <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
+          <i class="fas fa-tachometer-alt text-sm"></i>
+        </div>
+
+        Dashboard
+      </a>
+    </li>
+
+
+    <!-- BERANDA WEBSITE -->
+    <li>
+      <details class="group">
+
+        <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 cursor-pointer">
+
+          <div class="flex items-center">
+
+            <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
+              <i class="fas fa-home text-sm"></i>
+            </div>
+
+            Beranda Website
+          </div>
+
+          <i class="fas fa-chevron-down transition group-open:rotate-180"></i>
+
+        </summary>
+
+        <ul class="mt-2 space-y-1 pl-11">
+
+          <li>
+            <a href="{{ route('admin.hero.index') }}"
+               class="flex items-center px-3 py-2 rounded-lg text-white hover:bg-orange-500 transition">
+
+              <i class="fas fa-image mr-3 text-orange-200"></i>
+              Hero Image
+
             </a>
           </li>
 
-      {{-- BERANDA --}}
-      <li class="mt-6 w-full px-4">
-        <span class="block text-xs font-bold text-gray-500 uppercase tracking-wider">Beranda Website</span>
-        <hr class="mt-2 border-t border-gray-200" />
-      </li>
+          <li>
+            <a href="{{ route('admin.team.index') }}"
+               class="flex items-center px-3 py-2 rounded-lg text-white hover:bg-orange-500 transition">
 
-      <li class="mt-1 w-full">
-            <a
-              class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors {{ request()->is('admin/hero*') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' : '' }}"
-              href="{{ route('admin.hero.index') }}">
-              <div
-                class="bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                <i class="fas fa-image text-white text-sm"></i>
-              </div>
-              <span
-                class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft"
-                >Hero Image</span
-              >
+              <i class="fas fa-users mr-3 text-orange-200"></i>
+              Our Team
+
             </a>
           </li>
 
-      {{-- OUR TEAM --}}
-      <li class="mt-1 w-full">
-            <a
-              class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors {{ request()->is('admin/team*') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' : '' }}"
-              href="{{ route('admin.team.index') }}">
-              <div
-                class="bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                <i class="fas fa-users text-white text-sm"></i>
-              </div>
-              <span
-                class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft"
-                >Our Team</span
-              >
+          <li>
+            <a href="{{ route('admin.partner.index') }}"
+               class="flex items-center px-3 py-2 rounded-lg text-white hover:bg-orange-500 transition">
+
+              <i class="fas fa-handshake mr-3 text-orange-200"></i>
+              Our Partner
+
             </a>
           </li>
 
-      {{-- PARTNER --}}
-      <li class="mt-1 w-full">
-            <a
-              class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors {{ request()->is('admin/partner*') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 text-white' : '' }}"
-              href="{{ route('admin.partner.index') }}">
-              <div
-                class="bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                <i class="fas fa-handshake text-white text-sm"></i>
-              </div>
-              <span
-                class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft"
-                >Our Partner</span
-              >
+        </ul>
+      </details>
+    </li>
+
+
+    <!-- BIDANG STUDI -->
+    <li>
+      <a href="{{ route('admin.bidangstudi.index') }}"
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+
+        <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
+          <i class="fas fa-graduation-cap text-sm"></i>
+        </div>
+
+        Bidang Studi
+      </a>
+    </li>
+
+
+    <!-- LAYANAN JASA -->
+    <li>
+      <a href="{{ route('admin.layananjasa.index') }}"
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+
+        <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
+          <i class="fas fa-tools text-sm"></i>
+        </div>
+
+        Layanan Jasa
+      </a>
+    </li>
+
+
+    <!-- KARYA SISWA -->
+    <li>
+      <a href="{{ route('admin.karyasiswa.index') }}"
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+
+        <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
+          <i class="fas fa-palette text-sm"></i>
+        </div>
+
+        Karya Siswa
+      </a>
+    </li>
+
+
+    <!-- TESTIMONI -->
+    <li>
+      <details class="group">
+
+        <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 cursor-pointer">
+
+          <div class="flex items-center">
+
+            <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
+              <i class="fas fa-comments text-sm"></i>
+            </div>
+
+            Testimoni
+          </div>
+
+          <i class="fas fa-chevron-down transition group-open:rotate-180"></i>
+
+        </summary>
+
+        <ul class="mt-2 space-y-1 pl-11">
+
+          <li>
+            <a href="{{ route('admin.testimoni.index') }}"
+               class="flex items-center px-3 py-2 rounded-lg text-white hover:bg-orange-500 transition">
+
+              <i class="fas fa-comments mr-3 text-orange-200"></i>
+              Testimoni
+
             </a>
           </li>
 
-    </ul>
-  </div>
+          <li>
+            <a href="{{ route('admin.youtube-video.index') }}"
+               class="flex items-center px-3 py-2 rounded-lg text-white hover:bg-orange-500 transition">
+
+              <i class="fab fa-youtube mr-3 text-orange-200"></i>
+              Video Testimoni
+
+            </a>
+          </li>
+
+        </ul>
+
+      </details>
+    </li>
+
+
+    <!-- ARTIKEL -->
+    <li>
+      <details class="group">
+
+        <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 cursor-pointer">
+
+          <div class="flex items-center">
+
+            <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
+              <i class="fas fa-newspaper text-sm"></i>
+            </div>
+
+            Artikel
+          </div>
+
+          <i class="fas fa-chevron-down transition group-open:rotate-180"></i>
+
+        </summary>
+
+        <ul class="mt-2 space-y-1 pl-11">
+
+          <li>
+            <a href="{{ route('admin.artikel.index') }}"
+               class="flex items-center px-3 py-2 rounded-lg text-white hover:bg-orange-500 transition">
+
+              <i class="fas fa-list mr-3 text-orange-200"></i>
+              Daftar Artikel
+
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('admin.komentar.index') }}"
+               class="flex items-center px-3 py-2 rounded-lg text-white hover:bg-orange-500 transition">
+
+              <i class="fas fa-comments mr-3 text-orange-200"></i>
+              Komentar
+
+            </a>
+          </li>
+        </ul>
+
+      </details>
+    </li>
+
+    <!-- CONTACT INFO -->
+    <li>
+      <a href="{{ route('admin.contact-info.index') }}"
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+
+        <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
+          <i class="fas fa-map-marker-alt text-sm"></i>
+        </div>
+
+        Contact Info
+      </a>
+    </li>
+
+    <!-- KEMBALI KE WEBSITE -->
+    <li class="pt-4">
+      <a href="{{ url('/') }}"
+         class="flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-700 to-orange-900 hover:from-orange-800 hover:to-orange-950 transition">
+
+        <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-700 mr-3">
+          <i class="fas fa-external-link-alt text-sm"></i>
+        </div>
+
+        Kembali ke Website
+      </a>
+    </li>
+
+  </ul>
 
 </aside>
-
-

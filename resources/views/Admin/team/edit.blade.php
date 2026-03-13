@@ -1,41 +1,146 @@
 @extends('admin.layout.main')
 
 @section('content')
+
 @if(session('success'))
-    <div class="mb-4 p-4 bg-green-100 text-green-800 rounded">
-        {{ session('success') }}
-    </div>
+<div class="mb-4 p-4 bg-green-100 text-green-800 rounded-lg shadow">
+    {{ session('success') }}
+</div>
 @endif
 
 <div class="flex flex-wrap -mx-3">
-    <div class="w-full px-3">
-        <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white shadow-soft-xl rounded-2xl">
-            <div class="p-4">
-                <h5 class="font-bold mb-4">Edit Team</h5>
-                <form action="{{ route('admin.team.update', $team) }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700">Nama</label>
-                        <input type="text" name="nama" class="w-full px-3 py-2 border border-gray-300 rounded" value="{{ $team->nama }}" required>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700">Jabatan</label>
-                        <input type="text" name="jabatan" class="w-full px-3 py-2 border border-gray-300 rounded" value="{{ $team->jabatan }}" required>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700">History</label>
-                        <textarea name="history" class="w-full px-3 py-2 border border-gray-300 rounded">{{ $team->history }}</textarea>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700">Foto</label>
-                        <input type="file" name="foto" class="w-full">
-                        <img src="{{ asset('storage/'.$team->foto) }}" width="100" class="mt-2">
-                    </div>
-                    <button type="submit" class="inline-block px-6 py-3 bg-gradient-to-tl from-purple-700 to-pink-500 text-white font-semibold text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:outline-none transition duration-150">Update</button>
-                </form>
-            </div>
-        </div>
-    </div>
+<div class="w-full px-3">
+
+<div class="bg-white shadow-soft-xl rounded-2xl p-6">
+
+<h5 class="font-bold text-lg mb-6">Edit Team</h5>
+
+<form action="{{ route('admin.team.update', $team) }}" method="POST" enctype="multipart/form-data">
+
+@csrf
+@method('PUT')
+
+<!-- NAMA -->
+<div class="mb-5">
+<label class="block text-sm font-semibold text-gray-700 mb-2">
+Nama
+</label>
+
+<input
+type="text"
+name="nama"
+value="{{ $team->nama }}"
+required
+class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition"
+/>
 </div>
+
+
+<!-- JABATAN -->
+<div class="mb-5">
+<label class="block text-sm font-semibold text-gray-700 mb-2">
+Jabatan
+</label>
+
+<input
+type="text"
+name="jabatan"
+value="{{ $team->jabatan }}"
+required
+class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition"
+/>
+</div>
+
+
+<!-- HISTORY -->
+<div class="mb-5">
+<label class="block text-sm font-semibold text-gray-700 mb-2">
+History
+</label>
+
+<textarea
+name="history"
+rows="4"
+class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition"
+>{{ $team->history }}</textarea>
+</div>
+
+
+<!-- FOTO -->
+<div class="mb-6">
+
+<label class="block text-sm font-semibold text-gray-700 mb-2">
+Upload Foto
+</label>
+
+<div class="flex items-center gap-4">
+
+<label class="cursor-pointer inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-orange-500 to-orange-700 text-white text-sm font-semibold rounded-lg shadow hover:from-orange-600 hover:to-orange-800 transition">
+
+<i class="fas fa-upload mr-2"></i>
+Pilih File
+
+<input
+type="file"
+name="foto"
+id="foto"
+class="hidden"
+onchange="updateFileName(this)"
+>
+
+</label>
+
+<span id="file-name" class="text-sm text-gray-500">
+Belum ada file dipilih
+</span>
+
+</div>
+
+<!-- PREVIEW FOTO -->
+@if($team->foto)
+<div class="mt-4">
+<p class="text-sm text-gray-500 mb-2">Foto saat ini</p>
+<img
+src="{{ asset('storage/'.$team->foto) }}"
+class="w-28 rounded-lg shadow border"
+/>
+</div>
+@endif
+
+</div>
+
+
+<!-- BUTTON -->
+<div class="flex gap-3">
+
+<button
+type="submit"
+class="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-700 text-white font-semibold rounded-lg shadow hover:from-orange-600 hover:to-orange-800 transition"
+>
+Update
+</button>
+
+<a
+href="{{ route('admin.team.index') }}"
+class="px-6 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition"
+>
+Kembali
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+</div>
+
+<script>
+function updateFileName(input) {
+const fileName = input.files[0]?.name || "Belum ada file dipilih";
+document.getElementById("file-name").textContent = fileName;
+}
+</script>
+
 @endsection

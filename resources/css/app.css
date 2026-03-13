@@ -1,11 +1,106 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
-@theme {
+:root {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Custom orange gradient button class */
+.btn-orange {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    box-shadow: 0 4px 12px rgba(255, 126, 95, 0.3);
+}
+
+.btn-orange:hover {
+    background: linear-gradient(135deg, #ff6a4a, #fda65c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 126, 95, 0.4);
+}
+
+.btn-orange:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(255, 126, 95, 0.3);
+}
+
+/* Admin panel button class - matches logout button style */
+.btn-admin {
+    @apply inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-700 text-white font-semibold text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:outline-none transition duration-150 hover:from-orange-600 hover:to-orange-800;
+}
+
+/* Admin panel button variants */
+.btn-admin-secondary {
+    @apply inline-block px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold text-xs leading-tight rounded shadow-md hover:shadow-lg transition duration-150 hover:from-orange-500 hover:to-orange-700;
+}
+
+.btn-admin-danger {
+    @apply inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-red-700 text-white font-semibold text-xs leading-tight rounded shadow-md hover:shadow-lg transition duration-150 hover:from-red-600 hover:to-red-800;
+}
+
+.btn-admin-small {
+    @apply inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-700 text-white font-semibold text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:outline-none transition duration-150 hover:from-orange-600 hover:to-orange-800;
+}
+
+/* Override admin button colors to use orange theme */
+.admin-btn-gradient {
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.admin-btn-gradient:hover {
+    background-image: linear-gradient(to right, #feb47b, #ff7e5f);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 126, 95, 0.3);
+}
+
+.admin-btn-gradient:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(255, 126, 95, 0.3);
+}
+
+/* Specific overrides for admin buttons */
+.bg-gradient-to-r.from-orange-500.to-orange-700 {
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.bg-gradient-to-r.from-orange-600.to-orange-800 {
+    background-image: linear-gradient(to right, #feb47b, #ff7e5f);
+}
+
+/* Override purple/pink gradients in admin */
+.bg-gradient-to-tl.from-purple-700.to-pink-500 {
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.bg-gradient-to-tl.from-red-500.to-red-700 {
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* Ensure admin buttons have proper hover effects */
+.admin-btn-gradient:hover,
+.bg-gradient-to-r.from-orange-500.to-orange-700:hover,
+.bg-gradient-to-r.from-orange-600.to-orange-800:hover {
+    background-image: linear-gradient(to right, #feb47b, #ff7e5f);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 126, 95, 0.3);
+}
+
+/* Override any existing purple/pink styles in admin */
+.admin-panel .bg-gradient-to-tl.from-purple-700.to-pink-500,
+.admin-panel .bg-gradient-to-tl.from-red-500.to-red-700 {
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.admin-panel .bg-gradient-to-tl.from-purple-700.to-pink-500:hover,
+.admin-panel .bg-gradient-to-tl.from-red-500.to-red-700:hover {
+    background-image: linear-gradient(to right, #feb47b, #ff7e5f);
 }

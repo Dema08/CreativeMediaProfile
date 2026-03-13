@@ -12,7 +12,7 @@
         <div class="relative flex flex-col min-w-0 mb-4 break-words bg-white shadow-soft-xl rounded-2xl">
             <div class="p-4 flex justify-between items-center">
                 <h5 class="font-bold">Our Team</h5>
-                <a href="{{ route('admin.team.create') }}" class="inline-block px-6 py-3 bg-gradient-to-tl from-purple-700 to-pink-500 text-white text-xs font-bold uppercase rounded shadow-md hover:shadow-lg transition duration-150">Tambah Team</a>
+                <a href="{{ route('admin.team.create') }}" class="btn-admin">Tambah Team</a>
             </div>
             <div class="p-4 overflow-x-auto">
                 <table class="items-center w-full mb-0 align-top border-gray-200 text-gray-700">
@@ -47,11 +47,11 @@
               <img src="{{ asset('storage/'.$team->foto) }}" class="h-12 w-12 rounded-xl" alt="{{ $team->nama }}" />
             </td>
             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-              <a href="{{ route('admin.team.edit', $team) }}" class="text-xs font-semibold leading-tight text-slate-400">Edit</a>
+              <a href="{{ route('admin.team.edit', $team) }}" class="btn-admin-secondary">Edit</a>
               <form action="{{ route('admin.team.destroy', $team) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Yakin ingin dihapus?')">
                     @csrf
                     @method('DELETE')
-                    <button class="text-xs font-semibold leading-tight text-red-400">Hapus</button>
+                    <button class="btn-admin-danger">Hapus</button>
                 </form>
             </td>
         </tr>
