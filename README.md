@@ -1,157 +1,250 @@
-<p align="center"><a href="https://github.com/Dema08/CreativeMediaProfile" target="_blank"><img src="https://raw.githubusercontent.com/Dema08/CreativeMediaProfile/main/public/user_assets/images/logo.png" width="200" alt="Creative Media Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/Dema08/CreativeMediaProfile/actions"><img src="https://github.com/Dema08/CreativeMediaProfile/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://github.com/Dema08/CreativeMediaProfile"><img src="https://img.shields.io/badge/PHP-8.2+-777BB4.svg?logo=php&logoColor=white" alt="PHP Version"></a>
-<a href="https://github.com/Dema08/CreativeMediaProfile"><img src="https://img.shields.io/badge/Laravel-12.x-FF2D20.svg?logo=laravel&logoColor=white" alt="Laravel Version"></a>
-<a href="https://github.com/Dema08/CreativeMediaProfile"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+<a href="https://github.com/Dema08/CreativeMediaProfile" target="_blank">
+<img src="https://raw.githubusercontent.com/Dema08/CreativeMediaProfile/main/public/user_assets/images/logo.png" width="200" alt="Creative Media Logo">
+</a>
 </p>
 
-## Tentang Creative Media Profile
+<h1 align="center">Creative Media Company Profile</h1>
 
-Creative Media Profile adalah aplikasi web berbasis Laravel yang dirancang untuk **Creative Media**, sebuah Digital Agency & IT Training Center di Surabaya. Aplikasi ini menyediakan platform profesional untuk memperkenalkan layanan perusahaan, menampilkan portofolio, dan mengelola konten secara efisien melalui admin panel.
+<p align="center">
+Website Company Profile & Content Management System untuk <b>Creative Media</b><br>
+Digital Agency & IT Training Center di Surabaya
+</p>
 
-### Fitur Utama
+<p align="center">
 
-- **Frontend User-Friendly**: Tampilan profesional dengan informasi perusahaan, layanan, dan portofolio
-- **Admin Panel**: Sistem manajemen konten (CMS) untuk mengelola semua aspek website
-- **Manajemen Konten**: Artikel, karya siswa, testimoni, dan informasi kontak
-- **Galeri & Portofolio**: Menampilkan bidang studi, layanan jasa, dan karya siswa
-- **Testimonial System**: Fitur penilaian dan tanggapan dari pelanggan
-- **Responsive Design**: Tampilan yang optimal di berbagai perangkat
+<a href="https://github.com/Dema08/CreativeMediaProfile/actions">
+<img src="https://github.com/Dema08/CreativeMediaProfile/workflows/tests/badge.svg" alt="Build Status">
+</a>
 
-### Teknologi yang Digunakan
+<a href="https://github.com/Dema08/CreativeMediaProfile">
+<img src="https://img.shields.io/badge/PHP-8.2+-777BB4.svg?logo=php&logoColor=white">
+</a>
 
-- **Backend**: Laravel 12.x
-- **Frontend**: Tailwind CSS, Bootstrap, JavaScript
-- **Database**: MySQL
-- **Authentication**: Laravel Fortify (Admin)
-- **File Upload**: Intervention Image
+<a href="https://github.com/Dema08/CreativeMediaProfile">
+<img src="https://img.shields.io/badge/Laravel-12.x-FF2D20.svg?logo=laravel&logoColor=white">
+</a>
 
-## Instalasi
+<a href="https://github.com/Dema08/CreativeMediaProfile">
+<img src="https://img.shields.io/badge/license-MIT-blue.svg">
+</a>
 
-### Prasyarat
-- PHP 8.2+
-- Composer
-- Node.js & npm
-- Database (MySQL)
+</p>
 
-### Langkah Instalasi
+---
 
-1. **Clone Repository**
-   ```bash
-   git clone https://github.com/Dema08/CreativeMediaProfile.git
-   cd CreativeMediaProfile
-   ```
+# 📖 Tentang Project
 
-2. **Install Dependencies**
-   ```bash
-   composer install
-   npm install
-   ```
+**Creative Media Profile** adalah aplikasi **Website Company Profile** yang dibangun menggunakan **Laravel 12**.
+Website ini digunakan oleh **Creative Media – Digital Agency & IT Training Center di Surabaya** untuk menampilkan informasi perusahaan, layanan, portofolio karya siswa, serta artikel terbaru.
 
-3. **Konfigurasi Environment**
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+Selain website frontend, aplikasi ini juga dilengkapi dengan **Admin Panel (CMS)** yang memungkinkan admin mengelola seluruh konten website secara mudah.
 
-4. **Setup Database**
-   ```bash
-   php artisan migrate --seed
-   ```
+---
 
-5. **Build Assets**
-   ```bash
-   npm run build
-   ```
+# ✨ Fitur Utama
 
-6. **Jalankan Aplikasi**
-   ```bash
-   php artisan serve
-   ```
+### 🌐 Frontend Website
 
-### Admin Login
-- **Username**: `admin`
-- **Password**: `admin123`
+* Tampilan modern & responsive
+* Hero slider pada halaman utama
+* Informasi layanan dan bidang studi
+* Galeri portofolio karya siswa
+* Artikel & berita terbaru
+* Testimoni pelanggan
+* Halaman kontak
 
-## Struktur Proyek
+### ⚙️ Admin Panel (CMS)
+
+Admin dapat mengelola seluruh konten website melalui dashboard.
+
+* Manajemen Artikel
+* Manajemen Karya Siswa
+* Manajemen Testimoni
+* Manajemen Bidang Studi
+* Manajemen Layanan Jasa
+* Moderasi Komentar Artikel
+* Manajemen Hero Homepage
+* Manajemen Tim Kreatif
+* Manajemen Partner / Mitra
+* Manajemen Video YouTube
+* Pengaturan Informasi Kontak
+
+---
+
+# 🛠️ Teknologi yang Digunakan
+
+| Teknologi              | Keterangan                |
+| ---------------------- | ------------------------- |
+| **Laravel 12**         | Framework Backend         |
+| **PHP 8.2+**           | Bahasa pemrograman        |
+| **MySQL**              | Database                  |
+| **Tailwind CSS**       | Styling frontend          |
+| **Bootstrap**          | UI Framework              |
+| **JavaScript**         | Interaktivitas website    |
+| **Laravel Fortify**    | Authentication admin      |
+| **Intervention Image** | Image upload & processing |
+
+---
+
+# ⚙️ Instalasi Project
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/Dema08/CreativeMediaProfile.git
+cd CreativeMediaProfile
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+composer install
+npm install
+```
+
+### 3️⃣ Setup Environment
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+### 4️⃣ Setup Database
+
+Edit konfigurasi database di file `.env`
 
 ```
-CreativeMediaProfile/
-├── app/
-│   ├── Models/              # Model Eloquent
+DB_DATABASE=creativemedia
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Lalu jalankan:
+
+```bash
+php artisan migrate --seed
+```
+
+### 5️⃣ Build Asset Frontend
+
+```bash
+npm run build
+```
+
+### 6️⃣ Jalankan Server
+
+```bash
+php artisan serve
+```
+
+Website dapat diakses di:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+# 🔑 Login Admin
+
+Gunakan akun berikut untuk mengakses **Admin Panel**
+
+```
+Username : admin
+Password : admin123
+```
+
+Akses halaman admin melalui:
+
+```
+http://127.0.0.1:8000/admin
+```
+
+---
+
+# 📁 Struktur Project
+
+```
+CreativeMediaProfile
+│
+├── app
+│   ├── Models
 │   │   ├── Admin.php
 │   │   ├── Artikel.php
 │   │   ├── BidangStudi.php
 │   │   ├── KaryaSiswa.php
 │   │   ├── LayananJasa.php
 │   │   ├── Testimonial.php
-│   │   └── ...
-│   └── Http/Controllers/    # Controller aplikasi
-├── resources/
-│   ├── views/users/         # Template frontend
-│   └── views/admin/         # Template admin panel
-├── public/
-│   ├── user_assets/         # Asset frontend
-│   └── admin_assets/        # Asset admin panel
-└── routes/
-    └── web.php              # Routing aplikasi
+│   │
+│   └── Http/Controllers
+│
+├── resources
+│   ├── views
+│   │   ├── users      # Template Frontend
+│   │   └── admin      # Template Admin Panel
+│
+├── public
+│   ├── user_assets
+│   └── admin_assets
+│
+└── routes
+    └── web.php
 ```
 
-## Fitur Admin Panel
+---
 
-### Manajemen Konten
-- **Artikel**: Buat, edit, dan publikasikan artikel
-- **Karya Siswa**: Kelola portofolio karya siswa
-- **Testimonial**: Review dan kelola testimonial pelanggan
-- **Bidang Studi**: Manajemen program pelatihan
-- **Layanan Jasa**: Kelola layanan yang ditawarkan
-- **Komentar**: Moderasi komentar artikel
+# 💬 Interaksi Pengguna
 
-### Manajemen Website
-- **Hero Image**: Kelola gambar hero di homepage
-- **Our Team**: Manajemen tim kreatif
-- **Our Partner**: Kelola mitra perusahaan
-- **Contact Info**: Informasi kontak perusahaan
-- **YouTube Video**: Embed video promosi
+Website ini juga menyediakan beberapa fitur interaktif:
 
-## Fitur Frontend
+* Pengguna dapat memberikan **testimoni**
+* Pengguna dapat memberikan **komentar pada artikel**
+* Admin dapat melakukan **moderasi komentar**
+* Pengunjung dapat mengirim **pesan melalui halaman kontak**
 
-### Halaman Utama
-- Hero section dengan slider gambar
-- Informasi layanan perusahaan
-- Tentang perusahaan dan tim
-- Testimonial pelanggan
-- Galeri mitra
+---
 
-### Halaman Layanan
-- **Bidang Studi**: Program pelatihan IT & Multimedia
-- **Layanan Jasa**: Digital Agency services
-- **Karya Siswa**: Portofolio hasil karya siswa
-- **Artikel**: Berita dan informasi terkini
+# 🤝 Kontribusi
 
-### Interaksi Pengguna
-- **Testimonial**: Pengguna dapat memberikan penilaian dan testimoni
-- **Komentar**: Fitur komentar pada artikel (moderasi admin)
-- **Kontak**: Formulir kontak untuk komunikasi
+Kontribusi dari developer sangat terbuka.
 
-## Kontribusi
-
-Kami menerima kontribusi dari komunitas developer. Untuk berkontribusi:
+Langkah kontribusi:
 
 1. Fork repository ini
-2. Buat branch baru: `git checkout -b fitur-baru`
-3. Commit perubahan: `git commit -m 'Tambah fitur baru'`
-4. Push ke branch: `git push origin fitur-baru`
-5. Buat Pull Request
+2. Buat branch baru
 
-## Lisensi
+```
+git checkout -b fitur-baru
+```
 
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+3. Commit perubahan
 
-## Kontak
+```
+git commit -m "Menambahkan fitur baru"
+```
 
-Untuk informasi lebih lanjut tentang Creative Media:
-- **Website**: [creativemedia.com](https://creativemedia.com)
-- **Email**: info@creativemedia.com
+4. Push ke repository
+
+```
+git push origin fitur-baru
+```
+
+5. Buat **Pull Request**
+
+---
+
+# 📄 Lisensi
+
+Project ini menggunakan lisensi **MIT License**.
+
+Silakan gunakan dan modifikasi project ini sesuai kebutuhan.
+
+---
+
+# 📞 Kontak
+
+Informasi lebih lanjut mengenai **Creative Media**
+
+🌐 Website : https://creativemedia.com
+📧 Email : [info@creativemedia.com](mailto:info@creativemedia.com)
