@@ -9,7 +9,7 @@
 
 <div class="flex flex-wrap -mx-3 mb-4">
     <div class="w-full px-3">
-        <div class="relative flex flex-col min-w-0 mb-4 break-words bg-white shadow-soft-xl rounded-2xl">
+        <div class="relative flex flex-col min-w-0 mb-4 wrap-break-words bg-white shadow-soft-xl rounded-2xl">
             <div class="p-4 flex justify-between items-center">
                 <h5 class="font-bold">Artikel</h5>
                 <a href="{{ route('admin.artikel.create') }}" class="btn-admin">Tambah Artikel</a>
