@@ -1,59 +1,157 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://github.com/Dema08/CreativeMediaProfile" target="_blank"><img src="https://raw.githubusercontent.com/Dema08/CreativeMediaProfile/main/public/user_assets/images/logo.png" width="200" alt="Creative Media Logo"></a></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://github.com/Dema08/CreativeMediaProfile/actions"><img src="https://github.com/Dema08/CreativeMediaProfile/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/Dema08/CreativeMediaProfile"><img src="https://img.shields.io/badge/PHP-8.2+-777BB4.svg?logo=php&logoColor=white" alt="PHP Version"></a>
+<a href="https://github.com/Dema08/CreativeMediaProfile"><img src="https://img.shields.io/badge/Laravel-12.x-FF2D20.svg?logo=laravel&logoColor=white" alt="Laravel Version"></a>
+<a href="https://github.com/Dema08/CreativeMediaProfile"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Tentang Creative Media Profile
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Creative Media Profile adalah aplikasi web berbasis Laravel yang dirancang untuk **Creative Media**, sebuah Digital Agency & IT Training Center di Surabaya. Aplikasi ini menyediakan platform profesional untuk memperkenalkan layanan perusahaan, menampilkan portofolio, dan mengelola konten secara efisien melalui admin panel.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Frontend User-Friendly**: Tampilan profesional dengan informasi perusahaan, layanan, dan portofolio
+- **Admin Panel**: Sistem manajemen konten (CMS) untuk mengelola semua aspek website
+- **Manajemen Konten**: Artikel, karya siswa, testimoni, dan informasi kontak
+- **Galeri & Portofolio**: Menampilkan bidang studi, layanan jasa, dan karya siswa
+- **Testimonial System**: Fitur penilaian dan tanggapan dari pelanggan
+- **Responsive Design**: Tampilan yang optimal di berbagai perangkat
 
-## Learning Laravel
+### Teknologi yang Digunakan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- **Backend**: Laravel 12.x
+- **Frontend**: Tailwind CSS, Bootstrap, JavaScript
+- **Database**: MySQL
+- **Authentication**: Laravel Fortify (Admin)
+- **File Upload**: Intervention Image
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalasi
 
-## Laravel Sponsors
+### Prasyarat
+- PHP 8.2+
+- Composer
+- Node.js & npm
+- Database (MySQL)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Langkah Instalasi
 
-### Premium Partners
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/Dema08/CreativeMediaProfile.git
+   cd CreativeMediaProfile
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. **Install Dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
 
-## Contributing
+3. **Konfigurasi Environment**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Setup Database**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-## Code of Conduct
+5. **Build Assets**
+   ```bash
+   npm run build
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. **Jalankan Aplikasi**
+   ```bash
+   php artisan serve
+   ```
 
-## Security Vulnerabilities
+### Admin Login
+- **Username**: `admin`
+- **Password**: `admin123`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Struktur Proyek
 
-## License
+```
+CreativeMediaProfile/
+├── app/
+│   ├── Models/              # Model Eloquent
+│   │   ├── Admin.php
+│   │   ├── Artikel.php
+│   │   ├── BidangStudi.php
+│   │   ├── KaryaSiswa.php
+│   │   ├── LayananJasa.php
+│   │   ├── Testimonial.php
+│   │   └── ...
+│   └── Http/Controllers/    # Controller aplikasi
+├── resources/
+│   ├── views/users/         # Template frontend
+│   └── views/admin/         # Template admin panel
+├── public/
+│   ├── user_assets/         # Asset frontend
+│   └── admin_assets/        # Asset admin panel
+└── routes/
+    └── web.php              # Routing aplikasi
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Fitur Admin Panel
+
+### Manajemen Konten
+- **Artikel**: Buat, edit, dan publikasikan artikel
+- **Karya Siswa**: Kelola portofolio karya siswa
+- **Testimonial**: Review dan kelola testimonial pelanggan
+- **Bidang Studi**: Manajemen program pelatihan
+- **Layanan Jasa**: Kelola layanan yang ditawarkan
+- **Komentar**: Moderasi komentar artikel
+
+### Manajemen Website
+- **Hero Image**: Kelola gambar hero di homepage
+- **Our Team**: Manajemen tim kreatif
+- **Our Partner**: Kelola mitra perusahaan
+- **Contact Info**: Informasi kontak perusahaan
+- **YouTube Video**: Embed video promosi
+
+## Fitur Frontend
+
+### Halaman Utama
+- Hero section dengan slider gambar
+- Informasi layanan perusahaan
+- Tentang perusahaan dan tim
+- Testimonial pelanggan
+- Galeri mitra
+
+### Halaman Layanan
+- **Bidang Studi**: Program pelatihan IT & Multimedia
+- **Layanan Jasa**: Digital Agency services
+- **Karya Siswa**: Portofolio hasil karya siswa
+- **Artikel**: Berita dan informasi terkini
+
+### Interaksi Pengguna
+- **Testimonial**: Pengguna dapat memberikan penilaian dan testimoni
+- **Komentar**: Fitur komentar pada artikel (moderasi admin)
+- **Kontak**: Formulir kontak untuk komunikasi
+
+## Kontribusi
+
+Kami menerima kontribusi dari komunitas developer. Untuk berkontribusi:
+
+1. Fork repository ini
+2. Buat branch baru: `git checkout -b fitur-baru`
+3. Commit perubahan: `git commit -m 'Tambah fitur baru'`
+4. Push ke branch: `git push origin fitur-baru`
+5. Buat Pull Request
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+## Kontak
+
+Untuk informasi lebih lanjut tentang Creative Media:
+- **Website**: [creativemedia.com](https://creativemedia.com)
+- **Email**: info@creativemedia.com
