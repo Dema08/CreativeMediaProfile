@@ -43,9 +43,9 @@
                                 </span>
                             </td>
                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                <a href="{{ route('admin.artikel.show', $artikel) }}" class="btn-admin-secondary">Detail</a>
-                                <a href="{{ route('admin.artikel.edit', $artikel) }}" class="btn-admin-secondary ml-2">Edit</a>
-                                <form action="{{ route('admin.artikel.destroy', $artikel) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Yakin ingin dihapus?')">
+                                <a href="{{ route('admin.artikel.show', $artikel->id) }}" class="btn-admin-secondary">Detail</a>
+                                <a href="{{ route('admin.artikel.edit', $artikel->id) }}" class="btn-admin-secondary ml-2">Edit</a>
+                                <form action="{{ route('admin.artikel.destroy', $artikel->id) }}" method="POST" class="inline-block ml-2" onsubmit="return confirm('Yakin ingin dihapus?')">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn-admin-danger">Hapus</button>

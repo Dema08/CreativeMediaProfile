@@ -96,6 +96,9 @@ class ArtikelController extends Controller
             }
 
             $data['image'] = $request->file('image')->store('artikel', 'public');
+        } else {
+            // Keep existing image if no new image uploaded
+            $data['image'] = $artikel->image;
         }
 
         // Update slug if title changed

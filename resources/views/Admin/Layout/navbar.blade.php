@@ -17,7 +17,11 @@
       <h6 class="mb-0 font-bold capitalize">{{ $title }}</h6>
     </nav>
 
-    <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
-        </div>
+    <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto justify-end">
+      <!-- HIDE SIDEBAR BUTTON -->
+      <button id="toggle-sidebar" class="p-3 mr-4 rounded-xl bg-linear-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50" title="Hide Sidebar">
+        <i class="fas fa-bars text-lg"></i>
+      </button>
+    </div>
   </div>
 </nav>

@@ -1,4 +1,4 @@
-<aside class="fixed inset-y-0 left-0 z-50 my-4 ml-4 w-64 rounded-2xl bg-gradient-to-b from-orange-500 via-orange-600 to-orange-700 shadow-soft-2xl overflow-y-auto">
+<aside id="sidebar" class="fixed inset-y-0 left-0 z-50 my-4 ml-4 w-64 rounded-2xl bg-linear-to-b from-orange-500 via-orange-600 to-orange-700 shadow-soft-2xl overflow-y-auto transition-all duration-500 ease-in-out transform opacity-100 scale-100 translate-x-0">
 
   <!-- LOGO -->
   <div class="px-6 py-6">
@@ -19,7 +19,7 @@
     <!-- DASHBOARD -->
     <li>
       <a href="{{ route('admin.dashboard') }}"
-         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-linear-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
 
         <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
           <i class="fas fa-tachometer-alt text-sm"></i>
@@ -34,7 +34,7 @@
     <li>
       <details class="group">
 
-        <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 cursor-pointer">
+        <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-white font-semibold bg-linear-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 cursor-pointer">
 
           <div class="flex items-center">
 
@@ -89,7 +89,7 @@
     <!-- BIDANG STUDI -->
     <li>
       <a href="{{ route('admin.bidangstudi.index') }}"
-         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-linear-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
 
         <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
           <i class="fas fa-graduation-cap text-sm"></i>
@@ -103,7 +103,7 @@
     <!-- LAYANAN JASA -->
     <li>
       <a href="{{ route('admin.layananjasa.index') }}"
-         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-linear-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
 
         <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
           <i class="fas fa-tools text-sm"></i>
@@ -117,7 +117,7 @@
     <!-- KARYA SISWA -->
     <li>
       <a href="{{ route('admin.karyasiswa.index') }}"
-         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-linear-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
 
         <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
           <i class="fas fa-palette text-sm"></i>
@@ -132,7 +132,7 @@
     <li>
       <details class="group">
 
-        <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 cursor-pointer">
+        <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-white font-semibold bg-linear-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 cursor-pointer">
 
           <div class="flex items-center">
 
@@ -179,7 +179,7 @@
     <li>
       <details class="group">
 
-        <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 cursor-pointer">
+        <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-white font-semibold bg-linear-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 cursor-pointer">
 
           <div class="flex items-center">
 
@@ -223,7 +223,7 @@
     <!-- CONTACT INFO -->
     <li>
       <a href="{{ route('admin.contact-info.index') }}"
-         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
+         class="group flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-linear-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 transition">
 
         <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-600 mr-3">
           <i class="fas fa-map-marker-alt text-sm"></i>
@@ -236,7 +236,7 @@
     <!-- KEMBALI KE WEBSITE -->
     <li class="pt-4">
       <a href="{{ url('/') }}"
-         class="flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-gradient-to-r from-orange-700 to-orange-900 hover:from-orange-800 hover:to-orange-950 transition">
+         class="flex items-center px-4 py-3 rounded-lg text-white font-semibold bg-linear-to-r from-orange-700 to-orange-900 hover:from-orange-800 hover:to-orange-950 transition">
 
         <div class="flex items-center justify-center h-9 w-9 rounded-lg bg-white text-orange-700 mr-3">
           <i class="fas fa-external-link-alt text-sm"></i>

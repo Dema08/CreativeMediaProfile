@@ -32,20 +32,94 @@
 
 /* Admin panel button class - matches logout button style */
 .btn-admin {
-    @apply inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-700 text-white font-semibold text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:outline-none transition duration-150 hover:from-orange-600 hover:to-orange-800;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-admin:hover {
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-admin:focus {
+    outline: none;
 }
 
 /* Admin panel button variants */
 .btn-admin-secondary {
-    @apply inline-block px-4 py-2 bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold text-xs leading-tight rounded shadow-md hover:shadow-lg transition duration-150 hover:from-orange-500 hover:to-orange-700;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #ff9a7a, #ff7e5f);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.25;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-admin-secondary:hover {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-admin-danger {
-    @apply inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-red-700 text-white font-semibold text-xs leading-tight rounded shadow-md hover:shadow-lg transition duration-150 hover:from-red-600 hover:to-red-800;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.25;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-admin-danger:hover {
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-admin-small {
-    @apply inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-700 text-white font-semibold text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:outline-none transition duration-150 hover:from-orange-600 hover:to-orange-800;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-admin-small:hover {
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-admin-small:focus {
+    outline: none;
 }
 
 /* Override admin button colors to use orange theme */

@@ -203,3 +203,24 @@
   outline: 2px solid rgba(255,255,255,0.5);
   outline-offset: 2px;
 }
+
+/* Sidebar Toggle Styles */
+#sidebar {
+  transform: translateX(0);
+}
+
+#sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+#toggle-sidebar {
+  transition: all 0.3s ease;
+  background-color: #f97316 !important;
+  background-image: none !important;
+}
+
+#toggle-sidebar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background-color: #ea580c !important;
+}

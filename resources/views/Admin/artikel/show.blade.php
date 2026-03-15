@@ -64,7 +64,7 @@
 </div>
 
 <div class="mt-6 flex gap-3">
-    <a href="{{ route('admin.artikel.edit', $artikel) }}"
+    <a href="{{ route('admin.artikel.edit', $artikel->id) }}"
        class="btn-admin-secondary">Edit</a>
 
     <a href="{{ route('admin.artikel.index') }}"

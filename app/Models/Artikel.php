@@ -25,11 +25,6 @@ class Artikel extends Model
         'is_published' => 'boolean',
     ];
 
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
-
     public function komentars()
     {
         return $this->hasMany(Komentar::class)->where('is_approved', true);
